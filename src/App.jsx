@@ -13,14 +13,17 @@ const movies = [
   "The Lord of the Rings"
 ];
 
-const HTMLmovies = movies.map(movie => { return (<li key={movie}>{movie}</li>) })
+const HTMLmovies = movies.map((movie, index) => { 
+  return (
+  <li key={movie}>{movie} - {index+1}</li>
+)})
 
 function App() {
   return (
     <>
-      <ol>
+      <ul>
         {HTMLmovies}
-      </ol>
+      </ul>
     </>
   )
 }
