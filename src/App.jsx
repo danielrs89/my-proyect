@@ -1,4 +1,5 @@
 import './App.css'
+import {animals} from './data/animals'
 
 const movies = [
   "The Shawshank Redemption",
@@ -18,12 +19,24 @@ const HTMLmovies = movies.map((movie, index) => {
   <li key={movie}>{movie} - {index+1}</li>
 )})
 
+const HTMLanimals = animals.map((animal, index) => { 
+  return (
+  <div key={index}>
+    <h1>{animal.name}</h1>
+    <img src={animal.photo} alt={animal.name}/>
+  </div>
+)})
+
+
 function App() {
   return (
     <>
       <ul>
         {HTMLmovies}
       </ul>
+     
+        {HTMLanimals}
+      
     </>
   )
 }
