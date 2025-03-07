@@ -1,28 +1,19 @@
-// para desactivar todas las advertencias que lanza esLint sobre Props
-// rules: {
-//     ...js.configs.recommended.rules,
-//     ...reactHooks.configs.recommended.rules,
-//     'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
-//     'react-refresh/only-export-components': [
-//       'warn',
-//       { allowConstantExport: true },
-//     ],
-//     "react/prop-types": "off" ***AÑADIR ESTA LÍNEA
-//   },
-
+import { useState } from "react"
 
 function Child(props) {
-    //destructuring  - desestructurando "mejorar la claridad del código.
-    const {msg, person} = props;
 
+    const [userName]= useState("Danié")
+    const handleClick = ()=>{
+        props.handleLogin(userName)
+        console.log(userName)
+    }
     return (
-        <>
-            <h3>Este es componente hijo</h3>
-            <p>{msg}</p>
-            <div>{person.sex} - {person.age}</div>
-        </>
-    
+        <div style={{ border: "1px solid black", padding:"10px", borderRadius:"5px" }}>
 
-        
+            <h3>Este es componente hijo</h3>
+            <p>Nombre de usuario: {userName}</p>
+            <button onClick={handleClick}>Enviar</button>
+        </div>
+  
     )
 } export default Child

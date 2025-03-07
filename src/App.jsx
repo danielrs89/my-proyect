@@ -1,18 +1,19 @@
+import { useState } from 'react'
 import './App.css'
 import Child from './components/Child'
 
 
 function App() {
-  const text = "mensaje enviado desde padre a hijo"
-  const person = {
-    sex: "male",
-    age: "36"
+  const [displayName, setDisplayname]= useState("")
+  const login =(name)=>{
+    setDisplayname(name)
   }
   return (
     <>
-      <h1>PROPS | Comunicacioón entre componentes Padre-Hijo</h1>
+      <h1>PROPS | Comunicacioón entre componentes Hijo-Padre</h1>
       <h2>Este es componente padre</h2>
-      <Child msg={text} person={person}></Child>
+      <h3>Hola {displayName} </h3>
+      <Child handleLogin={login}></Child>
     </>
   )
 } export default App
