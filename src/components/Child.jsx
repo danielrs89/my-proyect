@@ -1,17 +1,14 @@
-import { useState } from "react"
 
 function Child(props) {
 
-    const [userName]= useState("Danié")
     const handleClick = ()=>{
-        props.handleLogin(userName)
-        console.log(userName)
+        props.handleLogin("Daniè")
     }
     return (
         <div style={{ border: "1px solid black", padding:"10px", borderRadius:"5px" }}>
 
             <h3>Este es componente hijo</h3>
-            <p>Nombre de usuario: {userName}</p>
+            <p>Nombre de usuario: {props.nameUser}</p>
             <button onClick={handleClick}>Enviar</button>
         </div>
   
