@@ -1,7 +1,11 @@
+import NavComponent from "../components/NavComponent"
 
 function BlogPage() {
   return (
-    <div>BlogPage</div>
+    <>
+      <NavComponent/>
+      <div>BlogPage</div>
+    </>
   )
 }
 

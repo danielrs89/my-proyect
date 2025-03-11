@@ -1,15 +1,21 @@
+import { Link } from "react-router-dom"
+import "./NavComponent.css";
 
 function NavComponent() {
     return (
         <>
-            <button>
-                <a href='/'>Home</a>
-            </button>
-            <button>
-                <a href='/blog'>Blog</a>
-            </button>
+
+            <header>
+                <nav >
+                    <Link to="/" >Home</Link>
+                    <Link to="/blog">Blog</Link>
+                </nav>
+            </header>
+
         </>
     )
 }
+
+
 
 export default NavComponent

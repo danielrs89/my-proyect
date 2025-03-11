@@ -1,7 +1,11 @@
+import NavComponent from "../components/NavComponent"
 
 function HomePage() {
   return (
-    <div>HomePage</div>
+    <>
+      <NavComponent/>
+      <div>HomePage</div>
+    </>
   )
 }
 
