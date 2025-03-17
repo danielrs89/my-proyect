@@ -18,18 +18,16 @@ function PostDetails() {
         fetchPost();
     }, [])
     return (
-
         <>
             <NavComponent />
             {/* si post tiene data lo muestras */}
-            {post && ( 
+            {post && (
                 <section>
                     <div>PostDetails</div>
                     <h3>{post.title}</h3>
                     <p>{post.body}</p>
                 </section>
             )}
-
         </>
     )
 }

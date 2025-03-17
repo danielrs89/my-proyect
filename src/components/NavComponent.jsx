@@ -8,6 +8,7 @@ function NavComponent() {
                 <nav >
                     <Link to="/" >Home</Link>
                     <Link to="/blog">Blog</Link>
+                    <Link to="/settings">Settings</Link>
                 </nav>
             </header>
         </>

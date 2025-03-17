@@ -31,7 +31,7 @@ function BlogPage() {
   return (
     <>
       <NavComponent />
-        <div>BlogPage</div>
+      <div>BlogPage</div>
       <section>
         <ul>
           {postCards}
