@@ -5,13 +5,20 @@ import PostCard from "../components/PostCard";
 function BlogPage() {
 
   const [posts, setPosts] = useState([]);
+  const [error, setError] = useState(false);
 
   const getPosts = async () => {
+    try {
 
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts')
-    const data = await response.json();
-    // console.log(data)
-    setPosts(data);
+      const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+      const data = await response.json();
+      // console.log(data)
+      setPosts(data);
+      setError(false);
+    } catch (e) {
+      setError(true);
+      console.error("ERROR Cath getPost -> ", e)
+    }
   }
 
 
@@ -33,12 +40,25 @@ function BlogPage() {
       <NavComponent />
       <div>BlogPage</div>
       <section>
-        <ul>
-          {postCards}
-        </ul>
+        {
+          error ?
+            (
+              // {/* control de ESTADO DE ERROR si la llamada apa api sale mal esta gestyionado por el cach*/ }
+              <h2>Error inesperado</h2>
+            ) : (
+
+              // {/* control de ESTADO DE CARGA esperando a que postCards tenga longitud */ }
+              !postCards.length ? (
+                <h2>Loading...</h2>
+              ) : (
+                <ul>{postCards}</ul>
+              )
+            )
+        }
       </section>
     </>
   )
 }
 
 export default BlogPage
+
