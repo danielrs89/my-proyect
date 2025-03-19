@@ -6,23 +6,24 @@ function BlogProviderWrapper(props) {
 
     const [posts, setPosts] = useState([]);
     const [error, setError] = useState(false);
-  
+
+
     const getPosts = async () => {
-      try {
-  
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts')
-        const data = await response.json();
-        // console.log(data)
-        setPosts(data);
-        setError(false);
-      } catch (e) {
-        setError(true);
-        console.error("ERROR Cath getPost -> ", e)
-      }
+        try {
+            const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+            const data = await response.json();
+            // console.log(data)
+            setPosts(data);
+            setError(false);
+        } catch (e) {
+            setError(true);
+            console.error("ERROR Cath getPost -> ", e)
+        }
     }
 
     return (
-        <BlogContext.Provider value={{posts,error, getPosts}}>
+
+        <BlogContext.Provider value={{ posts, error, getPosts }}>
             {props.children}
         </BlogContext.Provider>
     )

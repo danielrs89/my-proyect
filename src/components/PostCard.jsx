@@ -1,6 +1,9 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 function PostCard(Props) {
+console.log("RENDER");
+
     const { post } = Props;
     return (
         <>
@@ -13,5 +16,6 @@ function PostCard(Props) {
         </>
     )
 }
-
-export default PostCard
+// memoizacición guarda la info que necesitamos y no volver a cargar
+export default React.memo(PostCard)
+// export default PostCard

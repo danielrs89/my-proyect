@@ -5,7 +5,6 @@ import { UserContext } from "../contexts/user.context"
 function HomePage() {
 
   const { user, login, logout } = useContext(UserContext);
-
   
   return (
     <>

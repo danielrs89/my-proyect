@@ -2,10 +2,12 @@ import { useContext, useEffect } from "react"
 import NavComponent from "../components/NavComponent"
 import PostCard from "../components/PostCard";
 import { BlogContext } from "../contexts/blog.context";
+import { UserContext } from "../contexts/user.context";
 
 function BlogPage() {
 
   const {posts, error, getPosts} = useContext(BlogContext)
+  const {  login, logout } = useContext(UserContext);
 
 
 
@@ -25,6 +27,8 @@ function BlogPage() {
   return (
     <>
       <NavComponent />
+      <button onClick={() => login()}>Login</button>
+      <button onClick={() => logout()}>Logout</button>
       <div>BlogPage</div>
       <section>
         {
@@ -48,4 +52,3 @@ function BlogPage() {
 }
 
 export default BlogPage
-
