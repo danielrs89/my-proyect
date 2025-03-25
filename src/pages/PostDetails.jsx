@@ -3,24 +3,30 @@ import NavComponent from "../components/NavComponent"
 import { useEffect, useState } from "react";
 
 function PostDetails() {
-
+    // extraer el parámetro 'id' de la URL, que es el identificador del post a mostrar.
     const { id } = useParams();
     const [post, setPosts] = useState([]);
 
+    // Función asíncrona para obtener los datos del post desde la API.
     const fetchPost = async () => {
-        const respose = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
-        const data = await respose.json();
-        // console.log(data)
-        setPosts(data);
+        try {
+            const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+
+            const data = await response.json();
+            setPosts(data);
+        } catch (error) {
+            console.error("ERROR llamada a la API: ", error);
+        }
     }
 
     useEffect(() => {
         fetchPost();
-    }, [])
+    }, []); // se ejecute solo una vez, cuando el componente se monte.
+
     return (
         <>
             <NavComponent />
-            {/* si post tiene data lo muestras */}
+            {/* Verifica si 'post' tiene datos antes de mostrar el contenido */}
             {post && (
                 <section>
                     <div>PostDetails</div>
@@ -29,7 +35,7 @@ function PostDetails() {
                 </section>
             )}
         </>
-    )
+    );
 }
 
-export default PostDetails
+export default PostDetails; 

@@ -6,15 +6,18 @@ import { UserContext } from "../contexts/user.context";
 
 function BlogPage() {
 
-  const {posts, error, getPosts} = useContext(BlogContext)
-  const {  login, logout } = useContext(UserContext);
+  // Extrae los posts, el estado de error y la función getPosts del BlogContext
+  const { posts, error, getPosts } = useContext(BlogContext);
 
+  // Extrae las funciones login y logout del UserContext
+  const { login, logout } = useContext(UserContext);
 
-
+  // Llama a getPosts() cuando el componente se monta
   useEffect(() => {
     getPosts();
-  }, []) //se ejecuta nada mas se monta el componente
+  }, []); // Dependencias vacías: solo se ejecuta una vez al montar el componente
 
+  // Mapea los posts a una lista de PostCard con clave única (key)
   const postCards = posts.map((post) => {
     return (
       // elemento principal de un array ***necesita Key
@@ -34,11 +37,11 @@ function BlogPage() {
         {
           error ?
             (
-              // {/* control de ESTADO DE ERROR si la llamada apa api sale mal esta gestyionado por el cach*/ }
+              // control de ESTADO DE ERROR Muestra un mensaje de error si la API falla
               <h2>Error inesperado</h2>
             ) : (
 
-              // {/* control de ESTADO DE CARGA esperando a que postCards tenga longitud */ }
+              // control de ESTADO DE CARGA esperando a que postCards tenga longitud */ }
               !postCards.length ? (
                 <h2>Loading...</h2>
               ) : (

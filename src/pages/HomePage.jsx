@@ -5,18 +5,20 @@ import { UserContext } from "../contexts/user.context"
 function HomePage() {
 
   const { user, login, logout } = useContext(UserContext);
-  
+
   return (
     <>
       <NavComponent />
       <div>HomePage</div>
-      <h3>Hola{user && (
-        <span>
-          {user.name}
+      {user ? (
+        <h3>
+          Hola, <span>{user.name} 👋</span>
           <br />
           {user.email}
-        </span>
-      )} </h3>
+        </h3>
+      ) : (
+        <h3>No has iniciado sesión</h3>
+      )}
 
       <button onClick={() => login()}>Login</button>
       <button onClick={() => logout()}>Logout</button>

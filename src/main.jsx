@@ -7,13 +7,16 @@ import { UserProviderWrapper } from './contexts/user.context.jsx'
 import { BlogProviderWrapper } from './contexts/blog.context.jsx'
 
 createRoot(document.getElementById('root')).render(
-  // <StrictMode>
+  <StrictMode>
+    {/* Contexto del blog*/}
     <BlogProviderWrapper>
+      {/* Contexto del usuario*/}
       <UserProviderWrapper>
+        {/* Navegación con Router */}
         <BrowserRouter>
           <App />
         </BrowserRouter>
       </UserProviderWrapper>
     </BlogProviderWrapper>
-  // </StrictMode>
+  </StrictMode>
 )
