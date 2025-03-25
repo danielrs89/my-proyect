@@ -7,9 +7,9 @@ import SettingsPage from './pages/SettingsPage'
 import ErrorPage from './pages/ErrorPage'
 
 
-// instalar dependencia router-dom 
+// instalar dependencia router-dom ->
 // npm i react-router-dom
-// SPA una pagina y muestra segun la ruta
+// SPA "single page aplication" una unica paguina que decimos que mostrar y que no segun la ruta
 function App() {
   return (
     <>
@@ -18,8 +18,9 @@ function App() {
         <Route path='/blog' element={<BlogPage />} />
         <Route path='/blog/:id' element={<PostDetails />} />
         <Route path='/settings' element={<SettingsPage/>} />
-        
-        <Route path='*' element={<ErrorPage />} />
+  
+        {/* cualquier otra ruta  */}
+        <Route path='*' element={<ErrorPage />} /> 
       </Routes>
     </>
   )

@@ -9,7 +9,6 @@ function BlogPage() {
 
   const getPosts = async () => {
     try {
-
       const response = await fetch('https://jsonplaceholder.typicode.com/posts')
       const data = await response.json();
       // console.log(data)
@@ -21,10 +20,9 @@ function BlogPage() {
     }
   }
 
-
   useEffect(() => {
     getPosts();
-  }, []) //se ejecuta nada mas se monta el componente
+  }, []) // se ejecuta nada más se monta el componente
 
   const postCards = posts.map((post) => {
     return (
@@ -43,7 +41,7 @@ function BlogPage() {
         {
           error ?
             (
-              // {/* control de ESTADO DE ERROR si la llamada apa api sale mal esta gestyionado por el cach*/ }
+              // {/* control de ESTADO DE ERROR si la llamada apa api sale mal esta gestionado por el cach*/ }
               <h2>Error inesperado</h2>
             ) : (
 

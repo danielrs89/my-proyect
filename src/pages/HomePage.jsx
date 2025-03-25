@@ -4,13 +4,13 @@ import { UserContext } from "../contexts/user.context"
 
 function HomePage() {
 
-  const {user, serUser} = useContext(UserContext)
+  const { user, serUser } = useContext(UserContext) // nombre de la variable dado en ./context/user.context.jsx
+  
   return (
     <>
-      <NavComponent/>
+      <NavComponent />
       <div>HomePage</div>
       <h3>Hola {user} </h3>
-
     </>
   )
 }

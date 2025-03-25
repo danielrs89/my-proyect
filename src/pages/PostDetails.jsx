@@ -17,6 +17,7 @@ function PostDetails() {
     useEffect(() => {
         fetchPost();
     }, [])
+
     return (
         <>
             <NavComponent />

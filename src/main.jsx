@@ -7,8 +7,8 @@ import { UserProviderWrapper } from './contexts/user.context.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <UserProviderWrapper>
-      <BrowserRouter>
+    <UserProviderWrapper> {/* context */}
+      <BrowserRouter> {/* router */}
         <App />
       </BrowserRouter>
     </UserProviderWrapper>

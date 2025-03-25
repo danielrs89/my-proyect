@@ -7,10 +7,10 @@ function SettingsPage() {
   const [login, setLogin] = useState(false);
 
   if (!login) {
-    return <Navigate to={"/error"}/>
+    return <Navigate to={"/error"} />
   }
+  
   return (
-
     <>
       <NavComponent />
       <div>SettingsPage</div>

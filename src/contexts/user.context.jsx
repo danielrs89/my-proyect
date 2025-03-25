@@ -6,12 +6,12 @@ const UserContext = createContext();
 
 function UserProviderWrapper(props) {
     const [user, setUser] = useState("Danié");
-    return(
-        <UserContext.Provider value={{user, setUser}}>
+    return (
+        // envía por value las variable que necesitamos
+        <UserContext.Provider value={{ user, setUser }}>
             {props.children}
         </UserContext.Provider>
     )
-    
 }
 
-export {UserContext, UserProviderWrapper}
+export { UserContext, UserProviderWrapper }

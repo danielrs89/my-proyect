@@ -4,7 +4,8 @@ function ErrorPage() {
     return (
         <>
             <div>ErrorPage</div>
-            <Link to="/">Home</Link>
+            <br />
+            <Link to="/">Ir a Home</Link>
         </>
     )
 }
