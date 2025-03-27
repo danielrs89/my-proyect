@@ -9,7 +9,7 @@ function HomePage() {
   return (
     <>
       <NavComponent />
-      <div>HomePage</div>
+      <div data-testid="homepage-title">HomePage</div>
       {user ? (
         <h3>
           Hola, <span>{user.name} 👋</span>
